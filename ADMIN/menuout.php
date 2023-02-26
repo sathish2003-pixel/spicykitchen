@@ -28,6 +28,7 @@ $re=mysqli_query($conn,$r);
                 <th>Amount</th>
                 <th>Image</th>
                 <th>Edit</th>
+                <th>Delete</th>
                 <!-- <th>Delete</th> -->
 
             </tr>
@@ -51,7 +52,7 @@ while($row=mysqli_fetch_array($re)){
    <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:200px;height:200px;/>";?>
 
     <td><a href="menuupdate.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
-
+    <td><button class="btn btn-primary btn-rounded mb-2">DELETE</button></a></td>
 
     
     <tr>
