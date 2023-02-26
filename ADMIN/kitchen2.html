@@ -45,7 +45,8 @@
 
 font-family: navbar;
 text-align: center;
-background:linear-gradient(to left, #e66465, #9198e5);
+/* background:linear-gradient(to left, #e66465, #9198e5); */
+background-color: #3B185F;
 }
 
 
@@ -60,7 +61,7 @@ background:linear-gradient(to left, #e66465, #9198e5);
     margin: auto;
     font-size: 20px;
     cursor: pointer;
-    color:white;
+    color:yellow;
 }
 
 .navbar li:after {
@@ -86,17 +87,29 @@ background:linear-gradient(to left, #e66465, #9198e5);
   color:#52E1E2;
 }
 
-       /* body{
-        background-image: url(./images/pexels-rajesh-tp-1624487\ \(1\).jpg);
-        background-size:cover;
-       } */
+.heading .img-fluid{
+    animation: imgRotate 50s linear infinite;
+      
+}
 
+@keyframes imgRotate { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}  
+ .heading{
+  background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(./images/body\ image.jpg);
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+} 
 h4 {
   font-family: "Montserrat Medium";
   max-width: 40ch;
   text-align:left;
   transform: scale(0.94);
-  /* animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1); */
   color:lightblue;
 
 }
@@ -190,10 +203,8 @@ h4 {
          h1{
             width: 0%;
             overflow: hidden;
-            /* border-right: .15em solid #52E1E2; */
             white-space: nowrap;
-            /* color: white; */
-            /* animation: typing 4.5s steps(60, end) forwards, blink-caret .85s step-end infinite; */
+       
         }
         
         span {
@@ -218,26 +229,6 @@ color:dark;
 
 
 
-/* 
-/*** Service ***/
-/* .service-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transition: .5s;
-}
-
-.service-item:hover {
-    background: var(--primary);
-}
-
-.service-item * {
-    transition: .5s;
-}
-
-.service-item:hover * {
-    color: var(--light) !important;
-} */
-
-
 
 
 
@@ -257,14 +248,14 @@ color:dark;
 <div id="home">
    <nav class="navbar fixed-top navbar-expand-md navbar">
     <div class="container-fluid">
-      <img src="images/dish.png" width="60px" height="60px" alt="logo" class="image-fluid">
+      <img src="images/logo.png" width="60px" height="60px" alt="logo" class="image-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link " href="#home">HOME</a>
+            <a class="nav-link " href="#home" style="color:yellow ! important;">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="menu.html">MENU</a>
@@ -287,28 +278,7 @@ color:dark;
     </div>
   </nav>
   
-</div>
-<style>
-  .img-fluid{
-    animation: imgRotate 50s linear infinite;
-      
-}
 
-@keyframes imgRotate { 
-    100% { 
-        transform: rotate(360deg); 
-    } 
-}  
- .heading{
-  background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(./images/body\ image.jpg);
-  background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    
-} 
-
-</style>
 
 
 <!---nav bar ended-->
@@ -334,7 +304,7 @@ color:dark;
         </div>
         </div>
       </div>
-      
+    </div>
 <!--heading ended -->
 
 
