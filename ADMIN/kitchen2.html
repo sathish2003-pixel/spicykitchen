@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
+
+    <!--cdn for bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+ 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--favicn-->
+    <link rel="icon"  href="/favicon.ico"/>
+    <link rel="icon" type="image/png" href="images/dish.png">
+    
+    <!--AOS Cdn-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Inter&family=Kaushan+Script&family=Merienda:wght@400;700&family=Oswald:wght@600&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Signika:wght@300;500&family=Tajawal&family=Teko:wght@300&display=swap" rel="stylesheet">
+       
+    <title>Spicy kitchen</title>
+    <style>
+     
+ 
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+
+}
+
+
+/**nav bar style*/
+.navbar{
+
+font-family: navbar;
+text-align: center;
+background:linear-gradient(to left, #e66465, #9198e5);
+}
+
+
+@font-face {
+      font-family:navbar;
+      font-weight:lighter;
+      src: url("fonts/Barcelona\ 400.otf");
+      color: white;
+    }
+
+.navbar li a {
+    margin: auto;
+    font-size: 20px;
+    cursor: pointer;
+    color:white;
+}
+
+.navbar li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px black;
+    transform: scaleX(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.navbar li:hover:after {
+    transform: scaleX(1);
+}
+
+/* navbar button */
+.btn{
+  color:white;
+  margin: 4px;
+  display: inline-block;
+  
+}
+.navlink{
+  color:#52E1E2;
+}
+
+       /* body{
+        background-image: url(./images/pexels-rajesh-tp-1624487\ \(1\).jpg);
+        background-size:cover;
+       } */
+
+h4 {
+  font-family: "Montserrat Medium";
+  max-width: 40ch;
+  text-align:left;
+  transform: scale(0.94);
+  /* animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1); */
+  color:lightblue;
+
+}
+/* 
+
+
+
+
+/*feedback form started*/
+
+.contact{
+		padding: 4%;
+		height: 400px;
+	}
+	.col-md-3{
+		background: #ff9b00;
+		padding: 4%;
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
+	}
+	.contact-info{
+		margin-top:10%;
+	}
+	.contact-info img{
+		margin-bottom: 15%;
+	}
+	.contact-info h2{
+		margin-bottom: 10%;
+	}
+	.col-md-9{
+		background: #fff;
+		padding: 3%;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+	}
+	.contact-form label{
+		font-weight:600;
+	}
+	.contact-form button{
+    padding-top: 10px;
+    margin-top: 30px;
+		background:darksalmon;
+		color:rebeccapurple;
+		font-weight: 600;
+		width: 25%;
+	}
+	.contact-form button:hover{
+	background-color:yellowgreen;
+	}
+
+/*form ended*/
+
+
+
+
+/*about us started*/
+.centertext {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: fit-content;
+        }
+        
+        @keyframes typing {
+            0% {
+                width: 0
+            }
+            20% {
+                width: 20%;
+            }
+            40% {
+                width: 20%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        /* The typewriter cursor effect */
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent
+            }
+            50% {
+                border-color: #52E1E2;
+            }
+        }
+        
+         h1{
+            width: 0%;
+            overflow: hidden;
+            /* border-right: .15em solid #52E1E2; */
+            white-space: nowrap;
+            /* color: white; */
+            /* animation: typing 4.5s steps(60, end) forwards, blink-caret .85s step-end infinite; */
+        }
+        
+        span {
+            color: #AAC6C6;
+        }
+
+.about{
+font-family: about;
+letter-spacing: 2px;
+word-spacing: 15px;
+color:dark;
+}
+
+@font-face {
+      font-family:about;
+      font-weight: bold;
+      src: url("fonts/greatvibes/GreatVibes-Regular.ttf");
+    }
+
+
+
+
+
+
+/* 
+/*** Service ***/
+/* .service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+.service-item * {
+    transition: .5s;
+}
+
+.service-item:hover * {
+    color: var(--light) !important;
+} */
+
+
+
+
+
+ */
+
+
+
+
+
+ 
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50"> 
+  
+  
+<!--nav bar started-->
+<div id="home">
+   <nav class="navbar fixed-top navbar-expand-md navbar">
+    <div class="container-fluid">
+      <img src="images/dish.png" width="60px" height="60px" alt="logo" class="image-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">MENU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          
+          <button onclick="window.location.href='adminlogin.html';" class="btn btn-outline-warning" type="button"><i class="bi bi-person-circle"></i>Admin</button>
+
+          <button onclick="window.location.href='booktableform.html';" class="btn btn-outline-warning" type="button"><i class="bi bi-journal-medical"></i>Book Your Table</button>
+        </form>
+      </div>
+      
+    </div>
+  </nav>
+  
+</div>
+<style>
+  .img-fluid{
+    animation: imgRotate 50s linear infinite;
+      
+}
+
+@keyframes imgRotate { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}  
+ .heading{
+  background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(./images/body\ image.jpg);
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+} 
+
+</style>
+
+
+<!---nav bar ended-->
+<!--home started-->
+<br><br><br>
+<div class="heading">
+<div class="container-fluid py-5">
+  <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-6 text-center text-xxl-start"data-aos="zoom-in" data-aos-duration="1500">
+          <i class="fa fa-3x fa-utensils text-primary mb-4">Welcome to Spicy Kitchen</i>
+          <h2 class="text-info animated slideInLeft mb-4 pb-2">This is a Simply heaven for biriyai lovers</h2>
+
+
+          <a href="booktableform.html" class="btn btn-outline-warning  btn-sm py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+      </div>
+        <div class="col-lg-6 text-center text-lg-end overflow-hidden" data-aos="fade-down"data-aos-easing="linear"
+        data-aos-duration="1500">
+        <img class="img-fluid" src="./images/ddfff.png" alt=""width="800" height="600">
+    </div>  -->
+        </div>
+        </div>
+        </div>
+      </div>
+      
+<!--heading ended -->
+
+
+<div class="container-fluid">
+  
+   <div class="row">
+
+    <div class="col-md-4">
+      <img src="images/muttton biriyani.jpeg"class="img-thumbnail" data-aos="zoom-in" data-aos-easing="linear"
+      data-aos-duration="1500" alt="image" width="400" height="100">
+    </div>
+
+    <div class="col-md-8">
+      <figure class="text-start">
+        <blockquote class="blockquote">
+          <h4 class=" display-4 text-dark"data-aos="fade-out">
+            Little about us
+          </h4>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          <p class="lead text-dark" data-aos="fade-up">We love making our customers happy by serving them our tasty food and snacks!<br> High-quality ingredients mixed with excellent service is the best recipe for successful food..</p>
+        </figcaption>
+      </figure>
+      </div>
+</div>
+
+
+<br><br>
+
+  <div class="row">
+    <div class="col-md-8">
+      <figure class="text-start">
+        <blockquote class="blockquote">
+          <h4 class=" display-4 text-dark"data-aos="fade-out">
+            Perfect Ingredients
+          </h4>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          <p class="lead text-dark" data-aos="fade-up">We keep all the ingredients seasonal, well-sourced and of the highest quality.<br> Everything is hand-iced and baked in small batches to really give the essence of simple old fashioned cooking.</p>
+        </figcaption>
+      </figure>                           
+    </div>
+
+    <div class="col-md-4">
+      <img src="./images/three-col-1-2048x0.jpg"class="img-thumbnail" alt="image" width="400" height="100" data-aos="zoom-in" data-aos-easing="linear"data-aos-duration="1500">
+    
+      </div>
+</div>
+</div>
+  
+
+
+<!--home ended-->
+
+
+        <!-- Service Start -->
+        <style>
+          .card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(39, 39, 65, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+          }
+
+.back{
+  background-color: #b8e986;
+    background-image: 
+        radial-gradient(at 47% 33%, hsl(97.36, 100%, 89%) 0, transparent 59%), 
+        radial-gradient(at 82% 65%, hsl(271.91, 99%, 54%) 0, transparent 55%);
+}
+
+
+
+        </style>
+        <div class="back">
+        <div class="container-xxl back text-light py-5 my-5">
+          <div class="container">
+            <div class="row g-4">
+                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card">
+                      <div class="service-item rounded pt-3">
+                    
+                          <div class="p-4">
+                              <i class="fa fa-3x fa-user-tie text-warning mb-4"></i>
+                              <h5>Master Chefs</h5>
+                              <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                          </div>
+                      
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card">
+                      <div class="service-item rounded pt-3">
+                          <div class="p-4">
+                              <i class="fa fa-3x fa-utensils text-warning mb-4"></i>
+                              <h5>Quality Food</h5>
+                              <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="card">
+                      <div class="service-item rounded pt-3">
+                          <div class="p-4">
+                              <i class="fa fa-3x fa-cart-plus text-warning mb-4"></i>
+                              <h5>Online Order</h5>
+                              <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="card">
+                      <div class="service-item rounded pt-3">
+                          <div class="p-4">
+                              <i class="fa fa-3x fa-headset text-warning mb-4"></i>
+                              <h5>24/7 Service</h5>
+                              <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- Service End -->
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<br><br><br><br><br><br><br><br>
+
+  
+<div id="about" class="container-fluid">
+    <div class="row">
+
+      <div class="col-xxl-12">
+       
+
+        <h1><b>About us</b></h1>
+    
+
+         
+<div class="about">
+
+       <h3> Spicy Kitchen opened its first outlet in the year 2000 and has grown ! from a single shop selling 10 Kgs of Biriyani to 25 modern outlets preparing other delectable Indian cuisine. Currently have upwards of 1000 walk-in’s daily and sell more than a ton of biriyani daily. A perfect place to hangout and socialize with excellent food.We feature a cozy dinning, comfortable furnishings and cheerful decor for extra comfort. To please a large group of people, business meets, and get together we make up reservations and arrangements for customers.</ul></h3>
+</div>
+</div>
+</div>
+</div> 
+  
+
+<!--feedback form starts-->
+  <div class="container-fluid contact bg-info">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="contact-info">
+          <img src="images/ff0ec5230d884dd1b04af46f7718185c.png" alt="image"/>
+          <h2 style="color:#6A5ACD;">Keep in touch</h2>
+          <h3>We would love to hear from you </h3>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="contact-form">
+          <div class="form-group"  action="sentMail.php" method="post">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">          
+            <input type="text" class="form-control" id="name" placeholder="Enter your  Name" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="phone">Phone No:</label>
+            <div class="col-sm-10">          
+            <input type="number" class="form-control" id="Phone" placeholder="Enter Your Phone No" name="phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="comment">Comment:</label>
+            <div class="col-sm-10">
+            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-info" name="submit" data-submit="...Sending">Submit now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--feedback form ends--><br>
+<br><br><br><br><br><br></br>
+<br><br><br><br><br><br><br><br><br><br>
+<!-- <footer id="footer" class="footer">
+
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div>
+          <h4>Address</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022 - US<br>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4>Reservations</h4>
+          <p>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4>Opening Hours</h4>
+          <p>
+            <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+            Sunday: Closed
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Follow Us</h4>
+        <div class="social-links d-flex">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits"> -->
+
+<script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+</body>
+</html>
