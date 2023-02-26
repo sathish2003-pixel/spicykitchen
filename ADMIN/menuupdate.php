@@ -5,7 +5,7 @@ $sqll="select * from menu where id='$id'";
 $conn = mysqli_connect("localhost","root","","spicykitchen");
 $val=mysqli_query($conn,$sqll);
 $row=mysqli_fetch_array($val);
-//  print_r($row['image']);
+// print_r($row['image']);
 
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -89,9 +89,4 @@ if(isset($_POST['RP'])){
 if (!$conn) {
   die("Connection failed: " . '$conn->connect_error');
 }
-
-     
-    
-
-
 ?>

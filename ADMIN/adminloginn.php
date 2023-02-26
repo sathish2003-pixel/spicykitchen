@@ -140,7 +140,7 @@ body {
             <button class="btn mt-3" name="sub">Sign in</button>
         </form>
             <div class="line">
-            <a href="./new.html">Forget password?</a> or <a href="./adminsignup.html">Sign up</a>
+            <a href="./forgetpassword.php">Forget password?</a> or <a href="./adminsignup.html">Sign up</a>
                 </div>
     </div>  
 </body>

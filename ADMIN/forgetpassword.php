@@ -16,7 +16,7 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                   <h2 class="text-center  fw-bold mb-5 mx-1 mx-md-4 mt-4">RESET PASSWORD</h2>
-                  <form class="mx-1 mx-md-4" action="./newpassword.php" method="post">
+                  <form class="mx-1 mx-md-4" action="forgetpassword.php" method="post">
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
