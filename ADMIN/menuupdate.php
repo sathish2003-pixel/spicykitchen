@@ -8,7 +8,9 @@ $row=mysqli_fetch_array($val);
 //  print_r($row['image']);
 
 ?>
-        <form action="#"method="POST">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
+        <form action="#"method="POST"  enctype="multipart/form-data">
 
 <div class="row">
     <div class="col-md-6 mb-4">
@@ -49,57 +51,47 @@ $row=mysqli_fetch_array($val);
 
 <?php
 if(isset($_POST['RP'])){
- $n=$_POST['name'];
- $a=$_POST['amount'];
-//  $im=base64_encode($row['image']);
+  $n=$_POST['name'];
+  $a=$_POST['amount'];
+  // print_r($_POST);
+  
 
+   
+    $image=basename($_FILES['image']['name']);
+    $image_type=pathinfo($image,$pathinfo_extension);
+  
+    if($image_type=='jpg' or $image_type=='png' or $image_type='jpeg' or $image_type='gif'){
+    //  echo "hello";
+  $image=$_FILES['image']['tmp_name'];
+  $image=addslashes(file_get_contents($image));
+// print_r($_POST['name']);
+// print_r($_POST['amount']);
+// echo $image;
 
-
-
-
- echo "<img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:200px;height:200px;/>";
- 
+  
+  $sql1="UPDATE menu SET name='$n',amount='$a', image = '$image'  WHERE id='$id'";	
+  // echo $sql1;
+  
+   if(mysqli_query($conn,$sql1)){
+  
+    header("location:adminpanel.html");
+  
+  }
+  else{
+    echo "failed";
+  }
+  // print_r($image);
+    }
+  
+  }
 // $i=$_POST['id'];
 
 if (!$conn) {
   die("Connection failed: " . '$conn->connect_error');
 }
 
-
-// $sql = "SELECT * FROM menu;";
-
-// $result=mysqli_query($conn,$sql);
-
-// if(mysqli_num_rows($result)>0){
-
-// 	While($row=mysqli_fetch_array($result)){
-
-
-	  $sql1="UPDATE menu SET name='$n',amount='', WHERE id='$id';";	
-    echo $sql1;
-
-
-
-   
-
-    //   if($row['id']==$id){
-
-    		if(mysqli_query($conn,$sql1)){
-   
-				  // header("location:adminlogin.html");
-          echo "success";
-	 		  }
-
-			  else{
-
-				  echo "Failed To Update";
-
-			  }
-
-     }
-
      
-//   }
+    
 
 
 ?>
