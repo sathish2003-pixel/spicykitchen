@@ -20,8 +20,8 @@ $re=mysqli_query($conn,$r);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <table class="table table-hover">
-        <thead>
+    <table class="table table-bordered">
+        <thead class="table-dark">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -49,7 +49,7 @@ while($row=mysqli_fetch_array($re)){
     <td><?php echo $row['id']?></td>
     <td><?php echo $row['name']?></td>
     <td><?php echo $row['amount']?></td>
-   <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:200px;height:200px;/>";?>
+   <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:50px;height:50px;/>";?>
 
     <td><a href="menuupdate.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
     <td><button class="btn btn-primary btn-rounded mb-2">DELETE</button></a></td>
