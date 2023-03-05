@@ -21,7 +21,7 @@ $p=$_POST['pass'];
 $_SESSION["username"] = $e;
 $_SESSION["password"] = $p;
  print_r($_SESSION);
-header("location:dummy.php");
+
 }
 ?>
 <div class="container mt-3">

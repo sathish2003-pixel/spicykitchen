@@ -5,30 +5,54 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
             
         </script>
-    </head>
+  <style>
+/* body{
+/* background-color: red; */
+  }   */
+  body {
+    background-color: #111927;
+    background-image: 
+        radial-gradient(at 47% 33%, hsl(162.00, 77%, 40%) 0, transparent 59%), 
+        radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);
+}
+  .card{
+    backdrop-filter: blur(2px) saturate(180%);
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+    background-color: rgba(154, 166, 196, 0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+  </style>
+  </head>
+    
 <body>
-<section class="vh-100" style="background-color: #eee;">
+<section class="vh-100">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row">
+      <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+<img src="./images/./forget pass.png" width="400" height="600" class="img-responsive">
+</div>
+<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
         <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px; background-image:linear-gradient(rgb(145, 203, 250),#cffd00f6);">
+          <div class="card">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <div class="order-2 order-lg-1">
                   <h2 class="text-center  fw-bold mb-5 mx-1 mx-md-4 mt-4">RESET PASSWORD</h2>
                   <form class="mx-1 mx-md-4" action="forgetpassword.php" method="post">
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                             <label class="form-label">Your Email</label>
-                          <input type="email" id="form3Example3c" class="form-control" name="uemail" placeholder="Enter your existing email">
+                          <input type="email" id="form3Example3c" class="form-control" name="uemail" placeholder="Existing email">
                           </div>
                           </div>
 <div class="d-flex flex-row align-items-center mb-4">
     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
     <div class="form-outline flex-fill mb-0">
         <label class="form-label">Password</label>
-      <input type="password" id="form3Example4c" class="form-control" name="newp" placeholder="Enter your new password">
+      <input type="password" id="form3Example4c" class="form-control" name="newp" placeholder="New password">
       </div>
       </div>
 
@@ -45,6 +69,10 @@
 </div>
 </div>
 </div>
+</div>
+
+</div>
+
 </section>
 </body>
 </html> 
@@ -74,7 +102,7 @@ if(mysqli_num_rows($result)>0){
 
     		if(mysqli_query($conn,$sql1)){
    
-				  header("location:adminlogin.html");
+				  header("location:adminlogin.php");
           
 	 		  }
 

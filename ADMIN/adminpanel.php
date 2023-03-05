@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,22 +160,44 @@ body .container .card .box .content a {
           </ul>
       
            <a href="./adminsignup.html"> <button class="btn btn-outline-dark" type="submit"><i class="bi bi-person-fill-add"></i>ADD NEW ADMIN</button></a>
-           <?php
-           <a href="#"> <button class="btn btn-outline-dark" type="reset"><i class="bi bi-person-fill-add"></i>Logout</button></a>
           
-          ?>
+          
+   
+
+
+
+
+
+
+
+           
+          <!-- </a> <a href="#"> <button class="btn btn-outline-dark" type="reset"><i class="bi bi-person-fill-add"></i>Logout</button></a>
+        -->
         </div>
       </div>
     </nav>
 </div>
 
-    <div class="container-fluid bg-warning">
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid ">
     <div class="container">
       <div class="card">
         <div class="box">
           <div class="content">
             
             <h3>MENU</h3>
+           
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
             <a href="./menuout.php">Read More</a>
           </div>

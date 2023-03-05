@@ -81,6 +81,21 @@ background-color: #3B185F;
 .navlink{
   color:#52E1E2;
 }
+.page{
+  background: linear-gradient(rgba(15, 23, 43, .4), rgba(15, 23, 43, .4)), url(../ADMIN/images/./pexels-igor-starkov-1055058.jpg);
+  background-position: center;
+    background-repeat:repeat;
+    background-size: cover;
+} 
+.card{
+  backdrop-filter: blur(5px) saturate(185%);
+    -webkit-backdrop-filter: blur(5px) saturate(185%);
+    background-color: rgba(1, 13, 41, 0.27);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    size: 50px;
+}
+
 
    </style>
 </head>
@@ -114,7 +129,7 @@ background-color: #3B185F;
         </ul>
         <form class="d-flex">
           
-          <button onclick="window.location.href='adminlogin.html';" class="btn btn-outline-warning" type="button"><i class="bi bi-person-circle"></i>Admin</button>
+          <button onclick="window.location.href='adminlogin.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-person-circle"></i>Admin</button>
 
           </form>
       </div>
@@ -122,37 +137,36 @@ background-color: #3B185F;
     </div>
   </nav>
   
-
-
-
-
-
 <div class="page">
-  <section class="intro">
-  <div class="mask d-flex align-items-center h-100">
+<section class="intro">
+  <div class="mask d-flex align-items-center h-50">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
 
-              <div class="my-md-5 pb-5">
+              <div class="my-md-5">
 
                 <h1 class="fw-bold mb-0 text-warning">Book the table</h1>
 
                 <i class="fas fa-user-astronaut fa-3x my-5"></i>
 
        <form action="#" method="post">
+        <div class="row">
+        <div class="col-6">
 	   <div class="form-outline mb-4">
                  <label class="form-label text-light">Name</label>
                  <input type="text" id="firstName" class="form-control form-control-lg" name="name">
                 </div>
-				
+        </div>
+        <div class="col-6">
 				<div class="form-outline mb-4">
                  <label class="form-label text-light">Phone no</label>
                  <input type="text" id="firstName" class="form-control form-control-lg" name="phone">
                 </div>
-
+        </div>
+        </div>
 				<div class="form-outline mb-4">
                  <label class="form-label text-light">Email</label>
                  <input type="email" id="firstName" class="form-control form-control-lg" name="email">
@@ -185,24 +199,6 @@ background-color: #3B185F;
   </div>
 </section>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
       </div>
     </div>
