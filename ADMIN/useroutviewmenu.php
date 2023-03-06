@@ -38,11 +38,46 @@ $re=mysqli_query($conn,$r);
 </head>
 <body>
 
-<?php
-while($row=mysqli_fetch_array($re)){
-?>
+<div class="container">
 
-<div class="back">
+<?php 
+$row=mysqli_fetch_array($re);
+print_r($re);
+    foreach ($row as $re){
+  ?>
+
+
+
+       <div class="row-fluid ">
+    <div class="col-xl-4 ">
+<div class="card-columns-fluid">
+
+    <div class="card  bg-light" style = "width: 22rem; " >
+    <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:150px;height:150px;/>";?>
+
+      
+
+      <div class="card-body">
+        <h5 class="card-title"><b><?php echo $row['id']?></b></h5>
+         <p class="card-text"><b><?php echo $row['name']?></b></p>
+        <p class="card-text"><?php echo $row['amount']?></p>
+        <a href="#" class="btn btn-secondary">Full Details</a>
+
+     </div></div></div></div>
+
+    <?php
+        }
+      
+    ?>
+
+    </div> 
+     </div> 
+
+
+
+
+
+<!-- <div class="back">
         <div class="container-xxl back text-light py-5 my-5">
           <div class="container">
             <div class="row g-4">
@@ -53,14 +88,12 @@ while($row=mysqli_fetch_array($re)){
                       <div class="service-item rounded pt-3">
                     
                           <div class="p-4">
-                              <i class="fa fa-4x fa-user-tie text-warning mb-4"></i>
+                              <i class="fa fa-4x fa-user-tie text-warning mb-4"></i> -->
                               
-   <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:150px;height:150px;/>";?>
-
-
-                              <h5 class="text-dark"><?php echo $row['id']?></h5>
-                              <p class="text-dark"><?php echo $row['name']?>.</p><br>
-                              <p class="text-dark"><?php echo $row['amount']?></p>
+  
+                              <!-- <h5 class="text-dark"></h5>
+                              <p class="text-dark">.</p><br>
+                              <p class="text-dark"></p>
                               
 
 
@@ -75,10 +108,8 @@ while($row=mysqli_fetch_array($re)){
               </div>
           </div>
       </div>
-     
-      <?php
-}
-    ?>
+      -->
+  
 <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
