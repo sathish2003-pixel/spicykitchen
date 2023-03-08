@@ -1,11 +1,4 @@
-<?php
 
-$conn = mysqli_connect("localhost","root","","spicykitchen");
-
-mysqli_select_db($conn,'spicykitchen');
-$r='select * from  menu';
-$re=mysqli_query($conn,$r);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,143 +10,49 @@ $re=mysqli_query($conn,$r);
     <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+       <!-- Icon Font Stylesheet -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
 
+<?php
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <table class="table table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Image</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                <!-- <th>Delete</th> -->
-<!-- 
-            </tr>
-        </thead>
-        <tbody>  -->
-            <?php
-            
-while($row=mysqli_fetch_array($re)){
-
-    // echo"<tr><td>".$row['id'];
-    // echo"<td>".$row['name'];
-    // echo"<td>".$row['amount'];
-    // echo"<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:200px;height:200px;/>";
-   
-    ?>
-    <!-- <tr> -->
-
-
-
-
-
-
-
-    <div class="back">
-        <div class="container-xxl back text-light py-5 my-5">
-          <div class="container">
-            <div class="row g-4">
-                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="card" data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000">
-                      <div class="service-item rounded pt-3">
-                    
-                          <div class="p-4">
-                              <i class="fa fa-4x fa-user-tie text-warning mb-4"></i>
-                              <h5><?php echo $row['id']?></h5>
-                              <p><?php echo $row['name']?>.</p><br>
-                              <p><?php echo $row['amount']?></p>
-                              
-
-   <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:50px;height:50px;/>";?>
-
-
-
-
-                          </div>
-                      
-                      </div>
-                      </div>
-                  </div>
-                  
-              </div>
-              </div>
-          </div>
-      </div>
-     
-    
-<!-- 
-    <!-- <td><?php echo $row['id']?></td>
-    
-    <td><?php echo $row['name']?></td>
-    
-    <td><?php echo $row['amount']?></td>
-
-
-<!-- //
-   //<?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:50px;height:50px;/>";?>//
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <td><a href="menuupdate.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
-    <td><a href="menudelete.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">DELETE</button></a></td>
-
-    
-    <tr> -->
-        <?php
+$conn= mysqli_connect("localhost","root","","spicykitchen");
+if(!$conn){
+	die("Connection Failed:".mysqli_connect_error());
 }
-    ?>
-    <!-- <td><button class="btn btn-outline-warning mt-3" type="submit" name="edit"><a href="update.php?id=<?php echo $values['id'] ?>">EDIT</a></td>
-    <td><button class="btn btn-outline-danger mt-3" type="submit" name="delete"><i class="bi bi-trash"></i>DELETE</td>
- -->
- </tbody>
-</table>   
+$s="SELECT * from menu ;";
+$r=mysqli_query($conn,$s);
+
+
+
+  
+if (mysqli_num_rows($r)> 0){
+
+  while($row = mysqli_fetch_array($r)){
+$c=urlencode($row['category']);
+echo "<fieldset>";
+         
+  echo "<td><table align=center class=tab ></td>
+		<td colspan=2><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
+        <tr><td align=center class=imgs ><a href=wc.php?Cate=".$c.">".$row['category']."</td></a>";
+?>
+     </table>
+</html>
+<?php
+	 echo "</fieldset>";
+	}
+
+}
+else{
+	header("location:kitchen2html");
+}
+
+?>
+
+
 <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

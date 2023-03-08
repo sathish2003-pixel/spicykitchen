@@ -1,15 +1,5 @@
-
-<?php
-
-$conn = mysqli_connect("localhost","root","","spicykitchen");
-
-mysqli_select_db($conn,'spicykitchen');
-$r='select * from  menu';
-$re=mysqli_query($conn,$r);
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,28 +19,24 @@ $re=mysqli_query($conn,$r);
                 <th>Image</th>
                 <th>Edit</th>
                 <th>Delete</th>
-                <!-- <th>Delete</th> -->
-
             </tr>
         </thead>
         <tbody>
-            <?php
-            
+
+        <?php
+$conn = mysqli_connect("localhost","root","","spicykitchen");
+mysqli_select_db($conn,'spicykitchen');
+$r='select * from  menu';
+$re=mysqli_query($conn,$r);
+print_r($re);
 while($row=mysqli_fetch_array($re)){
-
-    // echo"<tr><td>".$row['id'];
-    // echo"<td>".$row['name'];
-    // echo"<td>".$row['amount'];
-    // echo"<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:200px;height:200px;/>";
-   
     ?>
-    <tr>
 
+    <tr>
     <td><?php echo $row['id']?></td>
     <td><?php echo $row['name']?></td>
     <td><?php echo $row['amount']?></td>
    <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:50px;height:50px;/>";?>
-
     <td><a href="menuupdate.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
     <td><a href="menudelete.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">DELETE</button></a></td>
 

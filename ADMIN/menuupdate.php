@@ -87,33 +87,6 @@ $row=mysqli_fetch_array($val);
   </div>
 </section>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--  -->
 
 

@@ -1,11 +1,4 @@
-<?php
 
-$conn = mysqli_connect("localhost","root","","spicykitchen");
-
-mysqli_select_db($conn,'spicykitchen');
-$r='select * from  menu';
-$re=mysqli_query($conn,$r);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,76 +33,77 @@ $re=mysqli_query($conn,$r);
 
 <div class="container">
 
-<?php 
-$row=mysqli_fetch_array($re);
-print_r($re);
-    foreach ($row as $re){
-  ?>
+<?php
+
+$conn = mysqli_connect("localhost","root","","spicykitchen");
+
+mysqli_select_db($conn,'spicykitchen');
+$r='select * from  menu';
+print_r($r);
+$re=mysqli_query($conn,$r);
+ $row=mysqli_fetch_array($re);
+  print_r($row['name']);
+  foreach ($row as $key=>$val){
+    echo($row['name'])."</br>";
+  }
+  
+?>         
+
+<div class="container-xxl py-5">
+  <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+          <h1 class="mb-5">Most Popular Items</h1>
+      </div>
+      <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+          <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+              <li class="nav-item">
+                  <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                      <i class="fa fa-coffee fa-2x text-primary"></i>
+                      <div class="ps-3">
+                          <small class="text-body">Popular</small>
+                          <h6 class="mt-n1 mb-0">Breakfast</h6>
+                      </div>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                      <i class="fa fa-hamburger fa-2x text-primary"></i>
+                      <div class="ps-3">
+                          <small class="text-body">Special</small>
+                          <h6 class="mt-n1 mb-0">Launch</h6>
+                      </div>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                      <i class="fa fa-utensils fa-2x text-primary"></i>
+                      <div class="ps-3">
+                          <small class="text-body">Lovely</small>
+                          <h6 class="mt-n1 mb-0">Dinner</h6>
+                      </div>
+                  </a>
+              </li>
+          </ul>
+          
 
 
-
-       <div class="row-fluid ">
-    <div class="col-xl-4 ">
+    <div class="row">
+<div class="col-xl-4 ">
 <div class="card-columns-fluid">
-
     <div class="card  bg-light" style = "width: 22rem; " >
     <?php echo "<td><img src=data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])." style=width:150px;height:150px;/>";?>
-
-      
-
       <div class="card-body">
         <h5 class="card-title"><b><?php echo $row['id']?></b></h5>
          <p class="card-text"><b><?php echo $row['name']?></b></p>
         <p class="card-text"><?php echo $row['amount']?></p>
         <a href="#" class="btn btn-secondary">Full Details</a>
-
-     </div></div></div></div>
-
-    <?php
-        }
-      
-    ?>
-
+     </div>
+    </div>
+  </div>
+</div>
     </div> 
      </div> 
-
-
-
-
-
-<!-- <div class="back">
-        <div class="container-xxl back text-light py-5 my-5">
-          <div class="container">
-            <div class="row g-4">
-                  <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="card" data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000">
-                      <div class="service-item rounded pt-3">
-                    
-                          <div class="p-4">
-                              <i class="fa fa-4x fa-user-tie text-warning mb-4"></i> -->
-                              
-  
-                              <!-- <h5 class="text-dark"></h5>
-                              <p class="text-dark">.</p><br>
-                              <p class="text-dark"></p>
-                              
-
-
-
-                          </div>
-                      
-                      </div>
-                      </div>
-                  </div>
-                  
-              </div>
-              </div>
-          </div>
-      </div>
-      -->
-  
 <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
