@@ -153,7 +153,7 @@ if (mysqli_num_rows($r)> 0){
 <tr><td  align=center><a href=desc.php?id=".$row['id'].">VIEW</a></tr></td>";
 
 ?>
-<?php echo $row['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">DELETE</button></a> 
+
 </body>
 <script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </table>
