@@ -1,4 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+       <!-- Icon Font Stylesheet -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
 body{
 background-color:#0000;
@@ -83,9 +97,10 @@ echo "<fieldset>";
          
   echo "<td><table align=center class=tab ></td>
 		<td colspan=2><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
-        <tr><td align=center class=imgs ><a href=wc.php?Cate=".$c.">".$row['category']."</td></a>";
+        <tr><td align=center class=imgs ><a href=wc.php?Cate=".$c.">".$row['category']."</td></a> ";
 ?>
      </table>
+     <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </html>
 <?php
 	 echo "</fieldset>";
@@ -97,3 +112,4 @@ else{
 }
 
 ?>
+

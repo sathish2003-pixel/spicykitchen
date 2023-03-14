@@ -13,7 +13,56 @@
        <!-- Icon Font Stylesheet -->
        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+body{
+background-color:#0000;
+}
+ul {
+  list-style-type: none;
+  overflow: hidden;
+ background-color:black;
+  height:50px;
+}
 
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+table{
+color:white;
+font-style:oblique;
+padding:15px 20px;
+}
+.im{
+width:275px;
+height:300px;
+}
+.tab{
+	border:20px;
+	cursor:pointer;
+}
+.active{
+	background-color:grey;
+}
+input[type=submit]
+{
+background-color:white;
+border-radius:20px;
+height:40px;
+width:110px;
+}
+.imgs{
+color:white;
+}
+</style>
 </head>
 <body>
 
@@ -51,8 +100,6 @@ else{
 }
 
 ?>
-
-
 <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
