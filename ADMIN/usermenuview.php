@@ -66,40 +66,47 @@ color:white;
 </head>
 <body>
 
+
 <?php
 
 $conn= mysqli_connect("localhost","root","","spicykitchen");
 if(!$conn){
 	die("Connection Failed:".mysqli_connect_error());
 }
-$s="SELECT * from menu ;";
+$s="SELECT * from menu";
 $r=mysqli_query($conn,$s);
 
 
-
-  
+echo "<table align=center cellpadding=10  ><tr>";
+$c=0;
 if (mysqli_num_rows($r)> 0){
-
   while($row = mysqli_fetch_array($r)){
-$c=urlencode($row['category']);
-echo "<fieldset>";
-         
-  echo "<td><table align=center class=tab ></td>
-		<td colspan=2><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
-        <tr><td align=center class=imgs ><a href=wc.php?Cate=".$c.">".$row['category']."</td></a>";
-?>
-     </table>
-</html>
-<?php
-	 echo "</fieldset>";
-	}
 
+    if($c==4){
+          echo "<tr>";
+            $c=0;
+  }
+  echo "<td><table class='table table-dark' cellpadding='10' ></td>
+		
+		<td><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
+        <tr><td align=center colspan=2><i>".$row['name']."</i></td>
+        <tr><td align=center><b>".$row['amount']."</b></td>";
+
+?>
+
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+</table>
+
+<?php
+        
+	
+    $c=$c+1;
+	}
 }
 else{
-	header("location:kitchen2html");
+	header("location:kitchen2.html");
 }
 
 ?>
-<script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

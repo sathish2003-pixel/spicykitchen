@@ -7,7 +7,7 @@ if(isset($_POST['add'])){
   
 $n=$_POST['name'];
 $a=$_POST['amount'];
-$c=$_POST['category'];
+
 
 if(!empty($_FILES['image']['name'])){
  
@@ -19,7 +19,7 @@ if(!empty($_FILES['image']['name'])){
 $image=$_FILES['image']['tmp_name'];
 $image=addslashes(file_get_contents($image));
 
-$sql = "INSERT INTO menu(name,amount,category,image) VALUES('$n','$a','$c','$image')";
+$sql = "INSERT INTO menu(name,amount,image) VALUES('$n','$a','$image')";
 
  if(mysqli_query($conn,$sql)){
 
@@ -97,15 +97,7 @@ print_r($image);
                  <input type="text" id="firstName" class="form-control form-control-lg" name="name">
                 </div>
 
-                <!-- <div class="form-outline mb-5">
-                <label class="form-label text-light"></label>
-                <!-- <select name="category" id="menu">
-    <option value="volvo">Straters</option>
-    <option value="saab">Biriyani</option>
-    <option value="opel">Parotta</option>
-    <option value="audi">Gravy</option>
-  </select> 
-                </div>-->
+                
                 
 
                 <div class="form-outline mb-5">
@@ -113,11 +105,7 @@ print_r($image);
         <input type="number" id="firstName" class="form-control form-control-lg" name="amount"/>
                   
                 </div> 
-                <div class="form-outline mb-5">
-                <label class="form-label text-light">Category</label>
-        <input type="text" id="firstName" class="form-control form-control-lg" name="category"/>
-                  
-                </div> 
+                
 
                 
                 <div class="form-outline mb-5">

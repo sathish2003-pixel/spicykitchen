@@ -28,7 +28,7 @@ $conn = mysqli_connect("localhost","root","","spicykitchen");
 mysqli_select_db($conn,'spicykitchen');
 $r='select * from  menu';
 $re=mysqli_query($conn,$r);
-print_r($re);
+
 while($row=mysqli_fetch_array($re)){
     ?>
 

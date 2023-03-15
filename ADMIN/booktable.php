@@ -11,7 +11,7 @@ if (!$conn) {
 }
 $sql = "INSERT INTO reservation(rname,rphone,remail,rdate,rmembers) VALUES('$n','$p','$e','$d','$m')";
 if(mysqli_query($conn,$sql)){
-	echo "we will contact you soon";
+  header("location:kitchen2.html");
 }
 
 else{
