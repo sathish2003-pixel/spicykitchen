@@ -23,7 +23,7 @@ $sql = "INSERT INTO menu(name,amount,image) VALUES('$n','$a','$image')";
 
  if(mysqli_query($conn,$sql)){
 
-  header("location:adminpanel.html");
+  header("location:menuout.php");
 
 }
 else{
@@ -118,8 +118,6 @@ print_r($image);
                     <button type="submit" class="btn btn-outline-info btn-sm btn-rounded  px-5" name="add">Insert</button>
               </div>
         </form>
-
-          
             </div>
           </div>
         </div>
@@ -128,26 +126,5 @@ print_r($image);
   </div>
 </section>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

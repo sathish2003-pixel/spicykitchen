@@ -112,7 +112,7 @@ if(isset($_POST['RP'])){
 // echo $image;
 
   
-  $sql1="UPDATE menu SET name='$n',amount='$a', image = '$image'  WHERE id='$id'";	
+  $sql1="UPDATE menu SET name='$n',amount='$a   WHERE id='$id'";	
   // echo $sql1;
   
    if(mysqli_query($conn,$sql1)){
