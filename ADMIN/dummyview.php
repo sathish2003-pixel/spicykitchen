@@ -57,7 +57,7 @@ border-radius: 50%;
      .navbar li:after {
          display: block;
          content: '';
-         border-bottom: solid 1px white;
+         border-bottom: solid 2px white;
          transform: scaleX(0);
          transition: transform 200ms ease-in-out;
      }
@@ -78,7 +78,7 @@ border-radius: 50%;
        transition: all 0.2s ease-in-out;
      }
      .navlink{
-       color:#52E566;
+       color:#52E1E2;
      } 
      
 
@@ -103,19 +103,18 @@ border-radius: 50%;
               <a class="nav-link " href="./kitchen2.html" style="color:yellow ! important;">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#" style="color:yellow ! important;">MENU</a>
+              <a class="nav-link active" href="#">MENU</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./kitchen2.html"style="color:yellow ! important;">ABOUT</a>
+              <a class="nav-link" href="./kitchen2.html">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./kitchen2.html"style="color:yellow ! important;">CONTACT</a>
-              
+              <a class="nav-link" href="./kitchen2.html">CONTACT</a>
             </li>
           </ul>
           <form class="d-flex">
             
-            <button onclick="window.location.href='adminlogin.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-cart-check-fill"></i>Cart</button>
+            <button onclick="window.location.href='adminlogin.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-person-circle"></i>Admin</button>
   
             <button onclick="window.location.href='booktable.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-journal-medical"></i>Book Your Table</button>
           </form>
@@ -136,23 +135,32 @@ $s="SELECT * from menu";
 $r=mysqli_query($conn,$s);
 
 
-echo "<table align=center cellpadding=10  ><tr>";
+// echo "<table align=center cellpadding=10  ><tr>";
 $c=0;
 if (mysqli_num_rows($r)> 0){
   while($row = mysqli_fetch_array($r)){
 
-    if($c==7){
+    if($c==4){
           echo "<tr>";
             $c=0;
   }
+  ?>
+  <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</av>
+
   
-  echo "<td><table id='dtBasicExample' class='table table-borderless table-sm' cellpadding='10' ></td>
-		
-		<td colspan=2><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
+  <!-- // echo "<td><table id='dtBasicExample' class='table table-borderless table-sm' cellpadding='10' ></td>
+
+		 -->
+		<img class="im  card-image-top"src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
         <tr><td align=center colspan=2><h5>".$row['name']."</h5></td>
-        <tr><td align=center><b><i class='bi bi-currency-rupee'>".$row['amount']."</i></b></td>";?>
+        <tr><td align=center><b>".$row['amount']."</b></td>";?>
         
-           <tr> <td align=center><a href="cart.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-warning btn-rounded mb-2"><i class="bi bi-cart-plus"></i>Add to cart</button></a></td>
+           <tr> <td align=center><a href="cart.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-warning btn-rounded mb-2">Add to cart</button></a></td>
 
 </body>
 <script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
