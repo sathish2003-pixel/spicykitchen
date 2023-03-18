@@ -86,10 +86,7 @@ border-radius: 50%;
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50"> 
-  
-  
   <!--nav bar started-->
- 
      <nav class="navbar fixed-top navbar-expand-md navbar">
       <div class="container-fluid">
        <img src="images/dish.png" width="80px" height="80px" alt="logo" class="image-responsive"> 
@@ -110,67 +107,35 @@ border-radius: 50%;
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./kitchen2.html"style="color:yellow ! important;">CONTACT</a>
-              
             </li>
           </ul>
           <form class="d-flex">
-            
             <button onclick="window.location.href='adminlogin.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-cart-check-fill"></i>Cart</button>
-  
             <button onclick="window.location.href='booktable.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-journal-medical"></i>Book Your Table</button>
           </form>
         </div>
-        
       </div>
-    </nav>
-    
-   <br><br><br><br>
- 
-<?php
+    </nav>    
+<br><br><br><br>
 
+
+<?php
 $conn= mysqli_connect("localhost","root","","spicykitchen");
 if(!$conn){
 	die("Connection Failed:".mysqli_connect_error());
 }
 $s="SELECT * from menu";
 $r=mysqli_query($conn,$s);
-
-
-echo "<table align=center cellpadding=10  ><tr>";
-
-$c=0;
-
 if (mysqli_num_rows($r)> 0){
   while($row = mysqli_fetch_array($r)){
-
-    if($c==7){
-          echo "<tr>";
-            $c=0;
-  }
-  
-  echo "<td><table id='dtBasicExample' class='table table-borderless table-sm' cellpadding='10' ></td>
-		
-		<td colspan=2><img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>
-        <tr><td align=center colspan=2><h5>".$row['name']."</h5></td>
-        <tr><td align=center><b><i class='bi bi-currency-rupee'>".$row['amount']."</i></b></td>";?>
-        
-           <tr> <td align=center><a href="cart.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-warning btn-rounded mb-2"><i class="bi bi-cart-plus"></i>Add to cart</button></a></td>
-
-</body>
-<script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-</table>
-
-<?php
-        
-	
-    $c=$c+1;
-	}
-  
+    print_r("<img class=im src='data:image/jpg;charset=utf8;base64,".base64_encode($row['image'])."'>");
+    print_r(  $row['name']);
+    print_r(  $row['amount']);
+  }	 
 }
-else{
-	header("location:kitchen2.html");
-}
-
 ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </html>
