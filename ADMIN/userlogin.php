@@ -27,18 +27,7 @@
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 title">USER SIGN UP</h3>
                   <form action="#" method="post">
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-      
-                        <div class="form-outline">
-                            <label class="form-label" for="firstName">User Name</label>
-                          <input type="text" id="firstName" class="form-control form-control-lg" name="name" />
-                        </div>
-      
-                      </div>
-                 
-                    </div>
-      
+                    
                     <div class="row">
                       <div class="col-md-6 mb-4 pb-2">
       
@@ -62,17 +51,9 @@
                       </div>
                   
 
-                      <div class="row">
-                      <div class="col-md-6 mb-4 pb-2">
-                        <div class="form-outline">
-                          <label class="form-label" for="phoneNumber">Phone Number</label>
-                          <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="phone"/>
-                          
-                        </div>
-                      </div>
-                    </div>
+                      
                     <div class="mt-4 pt-2">
-                      <input class="btn btn-primary btn-md" type="submit" value="Submit" name="signup"/>
+                      <input class="btn btn-primary btn-md" type="submit" value="Submit" name="sub"/>
                     </div>
       
                   </form>
@@ -85,23 +66,48 @@
       <script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
 <?php
-if(isset($_POST['signup'])){
-$n=$_POST['name'];
+// Set session variables
+
+
+if(isset($_POST['sub']))
+{
+
 $e=$_POST['email'];
 $p=$_POST['pass'];
-$ph=$_POST['phone'];
+// Set session variables
+$_SESSION["name"] =$e;
+$_SESSION["password"] =$p;
+print_r($_SESSION);
+
 $conn = mysqli_connect("localhost","root","","spicykitchen");
+
 if (!$conn) {
-  die("Connection failed");
+
+  die("Connection failed: " .$conn->connect_error);
 }
-$sql = "INSERT INTO user(name,email,password,phone) VALUES('$n','$e','$p','$ph')";
-if(mysqli_query($conn,$sql)){
-    echo"registered success";
-}
-else{
-	echo "Error:".$sql."<br>".mysqli_error($conn);
-}
-}
+
+$sql = "SELECT * FROM  WHERE user email='$e' and password='$p';";
+
+$result=mysqli_query($conn,$sql);
+if(mysqli_num_rows($result)>0){
+
+	while($row=mysqli_fetch_array($result)){
+
+		if($row['email']==$e && $row['password']==$p){
+
+			header("location:kitchen2.html");
+
+		}
+
+	 }
+
+ }
+	  else{
+				echo "incorrect passsword";
+
+  	    }
+
+  }
+
 ?>
