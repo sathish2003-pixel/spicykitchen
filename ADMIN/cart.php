@@ -1,6 +1,7 @@
 <?php
 
 $id=$_GET['id'];
+$q=$_GET['quantity'];
 $sqll="select * from menu where id='$id'";
 $conn = mysqli_connect("localhost","root","","spicykitchen");
 $val=mysqli_query($conn,$sqll);
@@ -66,6 +67,11 @@ $row=mysqli_fetch_array($val);
         <input type="number" id="firstName" class="form-control form-control-lg" name="amount" value="<?php echo $row['amount'];?>" />
                   
                 </div> 
+                <div class="form-outline mb-5">
+                <label class="form-label text-light">Amount</label>
+        <input type="number" id="firstName" class="form-control form-control-lg" name="amount" value="<?php echo $row['quantity'];?>" />
+                  
+                </div> 
 
                 
                 <div class="form-outline mb-5">
@@ -86,10 +92,7 @@ $row=mysqli_fetch_array($val);
     </div>
   </div>
 </section>
-  </div>
-<!--  -->
-
-
+</div>
 
 
 <?php
@@ -111,8 +114,8 @@ if(isset($_POST['RP'])){
 // print_r($_POST['amount']);
 // echo $image;
 
-  
-  $sql1="UPDATE menu SET name='$n',amount='$a   WHERE id='$id'";	
+
+$sql = "INSERT INTO cart(name,amount,image) VALUES('$n','$a','$image')";	
   // echo $sql1;
   
    if(mysqli_query($conn,$sql1)){

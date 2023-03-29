@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,28 +80,29 @@ if(isset($_POST['sub']))
 $e=$_POST['email'];
 $p=$_POST['pass'];
 // Set session variables
+$_SESSION["userid"];
 $_SESSION["name"] =$e;
 $_SESSION["password"] =$p;
-print_r($_SESSION);
 
-$conn = mysqli_connect("localhost","root","","spicykitchen");
+$con = mysqli_connect("localhost","root","","spicykitchen");
 
-if (!$conn) {
+if (!$con) {
 
-  die("Connection failed: " .$conn->connect_error);
+  die("Connection failed: " .$con->connect_error);
 }
 
-$sql = "SELECT * FROM  WHERE user email='$e' and password='$p';";
+$sql = "SELECT * FROM user WHERE email='$e' and password='$p';";
 
-$result=mysqli_query($conn,$sql);
+
+$result=mysqli_query($con,$sql);
 if(mysqli_num_rows($result)>0){
 
 	while($row=mysqli_fetch_array($result)){
 
 		if($row['email']==$e && $row['password']==$p){
 
-			header("location:kitchen2.html");
-
+			print_r($_SESSION["name"]);
+      header("location:usermenuview.php");
 		}
 
 	 }
@@ -109,5 +114,6 @@ if(mysqli_num_rows($result)>0){
   	    }
 
   }
+  session_unset();
 
 ?>

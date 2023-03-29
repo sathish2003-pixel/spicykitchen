@@ -1,4 +1,7 @@
+<?php
 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,7 +117,7 @@ border-radius: 50%;
             </li>
           </ul>
           <form class="d-flex">
-            
+          
             <button onclick="window.location.href='adminlogin.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-cart-check-fill"></i>Cart</button>
   
             <button onclick="window.location.href='booktable.php';" class="btn btn-outline-warning" type="button"><i class="bi bi-journal-medical"></i>Book Your Table</button>
@@ -137,6 +140,7 @@ $r=mysqli_query($conn,$s);
 
 
 echo "<table align=center cellpadding=10  ><tr>";
+"<tr>".print_r($_SESSION['userid']);
 
 $c=0;
 
@@ -154,7 +158,7 @@ if (mysqli_num_rows($r)> 0){
         <tr><td align=center colspan=2><h5>".$row['name']."</h5></td>
         <tr><td align=center><b><i class='bi bi-currency-rupee'>".$row['amount']."</i></b></td>";?>
         
-           <tr> <td align=center><a href="cart.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-warning btn-rounded mb-2"><i class="bi bi-cart-plus"></i>Add to cart</button></a></td>
+           <tr> <td align=center><a href="menucart.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-warning btn-rounded mb-2"><i class="bi bi-cart-plus"></i>Add to cart</button></a></td>
 
 </body>
 <script src="./bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>

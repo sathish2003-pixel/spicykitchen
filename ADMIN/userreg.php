@@ -1,3 +1,24 @@
+<?php
+if(isset($_POST['signup'])){
+$n=$_POST['name'];
+$e=$_POST['email'];
+$p=$_POST['pass'];
+$ph=$_POST['phone'];
+$conn = mysqli_connect("localhost","root","","spicykitchen");
+if (!$conn) {
+  die("Connection failed");
+}
+$sql = "INSERT INTO user(name,email,password,phone) VALUES('$n','$e','$p','$ph')";
+if(mysqli_query($conn,$sql)){
+    echo"registered success";
+}
+else{
+	echo "Error:".$sql."<br>".mysqli_error($conn);
+}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,22 +107,3 @@
 </body>
 </html>
 
-<?php
-if(isset($_POST['signup'])){
-$n=$_POST['name'];
-$e=$_POST['email'];
-$p=$_POST['pass'];
-$ph=$_POST['phone'];
-$conn = mysqli_connect("localhost","root","","spicykitchen");
-if (!$conn) {
-  die("Connection failed");
-}
-$sql = "INSERT INTO user(name,email,password,phone) VALUES('$n','$e','$p','$ph')";
-if(mysqli_query($conn,$sql)){
-    echo"registered success";
-}
-else{
-	echo "Error:".$sql."<br>".mysqli_error($conn);
-}
-}
-?>
