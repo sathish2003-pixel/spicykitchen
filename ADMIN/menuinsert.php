@@ -64,7 +64,7 @@ print_r($image);
     border: 1px solid rgba(255, 255, 255, 0.125);
           }
           .page{
-            background: linear-gradient(rgba(15, 23, 43, .6), rgba(15, 23, 43, .6)), url(./images/body\ image.jpg);
+            background: linear-gradient(rgba(15, 23, 43, .6), rgba(15, 23, 43, .6)), url(./images/454305854.jpg);
   background-position: center;
     background-repeat:no-repeat;
     background-size:cover;         

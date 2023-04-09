@@ -140,7 +140,7 @@ $r=mysqli_query($conn,$s);
 
 
 echo "<table align=center cellpadding=10  ><tr>";
-"<tr>".print_r($_SESSION['userid']);
+
 
 $c=0;
 
